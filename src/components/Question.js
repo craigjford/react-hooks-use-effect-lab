@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 function Question({ question, onAnswered }) {
   const [timeRemaining, setTimeRemaining] = useState(10);
 
-  console.log('in Question');
-
   useEffect(() => {
     const timeout = setTimeout(() => {
       setTimeRemaining((timeRemaining) => timeRemaining - 1);
@@ -20,13 +18,6 @@ function Question({ question, onAnswered }) {
     setTimeRemaining(10);
     onAnswered(isCorrect);
   }
-
-  const { id, prompt, answers, correctIndex } = question;
-  console.log('Question - id = ', id)
-  console.log('Question - prompt = ', prompt)
-  console.log('Question - answers = ', answers)
-  console.log('Question - idx = ', correctIndex)
-
 
   return (
     <>
